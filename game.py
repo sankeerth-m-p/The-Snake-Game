@@ -9,6 +9,7 @@ class Game:
         self.snake=Snake(width//2,height//2)
         self.food=self.generateFood()
         self.direction=(0,1)
+        self.score=0
 
     def generateFood(self):
         while True:
@@ -26,6 +27,7 @@ class Game:
         if (new_x,new_y)==self.food:
             self.food=self.generateFood()
             print("snake ate food")
+            self.score+=1
         else:
             self.snake.removeTail()
     
